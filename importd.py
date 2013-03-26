@@ -1,5 +1,5 @@
 class D(object):
-    from django.conf.urls.defaults import patterns
+    from django.conf.urls import patterns
     urlpatterns = patterns("")
     def _is_management_command(self, cmd):
         return cmd in "runserver,shell".split(",")
@@ -24,7 +24,7 @@ class D(object):
         from django.shortcuts import get_object_or_404, render_to_response
         self.get_object_or_404 = get_object_or_404
         self.render_to_response = render_to_response
-        from django.conf.urls.defaults import patterns, url
+        from django.conf.urls import patterns, url
         self.patterns = patterns
         self.url = url
         from django.template import RequestContext
